@@ -1,4 +1,4 @@
-escal's Triangle
+Pascal's Triangle
 AlgorithmPython
 
     Weight: 1
