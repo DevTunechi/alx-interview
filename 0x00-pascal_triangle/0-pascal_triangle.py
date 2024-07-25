@@ -12,6 +12,7 @@ def pascal_triangle(n):
     """
     x = []
     if n <= 0:
+<<<<<<< HEAD
         return x
     x = [[1]]
     for i in range(1, n):
@@ -22,3 +23,16 @@ def pascal_triangle(n):
         temp.append(1)
         x.append(temp)
     return x
+=======
+        return []
+
+    triangle = []
+
+    for i in range(n):
+        row = [1] * (i + 1)
+        for j in range(1, i):
+            row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
+        triangle.append(row)
+
+    return triangle
+>>>>>>> 18ed999e0f05f31b9a9b19d48bd3504799e350f0
