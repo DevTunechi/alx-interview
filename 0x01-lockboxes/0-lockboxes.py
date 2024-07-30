@@ -19,6 +19,6 @@ return all(unlocked)
 
 
 # Test cases
-print(canUnlockAll([[1], [2], [3], []]))
-print(canUnlockAll([[1, 3], [3, 0, 1], [2], [0]]))
-print(canUnlockAll([[1, 2, 3], [0], [4], []]))
+print(canUnlockAll([[1], [2], [3], []])) #  True 
+print(canUnlockAll([[1, 3], [3, 0, 1], [2], [0]])) #  True
+print(canUnlockAll([[1, 2, 3], [0], [4], []])) #  False
