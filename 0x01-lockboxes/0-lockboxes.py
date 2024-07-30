@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 def canUnlockAll(boxes):
     if not boxes:
         return False
@@ -16,4 +14,11 @@ def canUnlockAll(boxes):
                 unlocked[key] = True
                 keys.append(key)
 
-    return all(unlocked)
+
+return all(unlocked)
+
+
+# Test cases
+print(canUnlockAll([[1], [2], [3], []]))
+print(canUnlockAll([[1, 3], [3, 0, 1], [2], [0]]))
+print(canUnlockAll([[1, 2, 3], [0], [4], []]))
