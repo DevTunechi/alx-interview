@@ -1,26 +1,21 @@
 #!/usr/bin/python3
+"""
+This method determines if all boxes can be opened
+Using prototype: def canUnlockAll(boxes)
+"""
+
 
 def canUnlockAll(boxes):
-    if not boxes:
-        return False
+    """
+    It checks if boxes can be unlocked
+    """
+    for key in range(1, len(boxes) - 1):
+        ctr = False
+        for idx in range(len(boxes)):
+            ctr = (key in boxes[idx] and key != idx)
+            if ctr:
+                break
+        if ctr is False:
+            return ctr
 
-    n = len(boxes)
-    unlocked = [False] * n
-    unlocked[0] = True
-    keys = [0]
-
-    while keys:
-        current_key = keys.pop()
-        for key in boxes[current_key]:
-            if key < n and not unlocked[key]:
-                unlocked[key] = True
-                keys.append(key)
-
-
-return (all(unlocked))
-
-
-# Test cases
-print(canUnlockAll([[1], [2], [3], []]))  # True
-print(canUnlockAll([[1, 3], [3, 0, 1], [2], [0]]))  # True
-print(canUnlockAll([[1, 2, 3], [0], [4], []]))  # False
+    return True
