@@ -45,7 +45,8 @@ for ln in sys.stdin:
         ln_code += 1
         if ln_code % 10 == 0:
             display_stats()
-        except Exception:
+        
+    except Exception:
             continue
 
 display_stats()
