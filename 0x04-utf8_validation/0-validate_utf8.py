@@ -13,9 +13,9 @@ def validUTF8(data: List[int]) -> bool:
 
     for byte in data:
 
-        # Convert floats to integers (since first test case expect >behavior)
+        # Convert floats to integers (round to nearest integer)
         if isinstance(byte, float):
-            byte = int(byte)
+            byte = round(byte)
 
         # Ensure byte is an integer between 0 and 255
         if not isinstance(byte, int) or byte < 0 or byte > 255:
@@ -43,7 +43,7 @@ def validUTF8(data: List[int]) -> bool:
     return num_bytes == 0
 
 
-# Test cases (ensure you have only these three calls)
+# Test cases
 data = [65, 90.03]  # Should pass as True after converting 90.03 to 90
 print(validUTF8(data))  # Expected: True
 
