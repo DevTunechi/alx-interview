@@ -43,7 +43,7 @@ def validUTF8(data: List[int]) -> bool:
     return num_bytes == 0
 
 
-# Test cases
+# Test cases (ensure you have only these three calls)
 data = [65, 90.03]  # Should pass as True after converting 90.03 to 90
 print(validUTF8(data))  # Expected: True
 
