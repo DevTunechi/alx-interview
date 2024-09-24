@@ -1,23 +1,20 @@
 #!/usr/bin/python3
+""" Island perimeter Algorithm """
 
-def dfs(grid, r, c):
-    if r < 0 or r >= len(grid) or c < 0 or c >= len(grid[0]):
-        return 1  # Out of bounds (water)
-    if grid[r][c] == 0:
-        return 1  # Water cell
-    if grid[r][c] == -1:  # Already visited
-        return 0
-
-    grid[r][c] = -1
-
-    return (dfs(grid, r - 1, c) +  # Up
-            dfs(grid, r + 1, c) +  # Down
-            dfs(grid, r, c - 1) +  # Left
-            dfs(grid, r, c + 1))    # Right
 
 def island_perimeter(grid):
-    for r in range(len(grid)):
-        for c in range(len(grid[0])):
-            if grid[r][c] == 1:  # Start DFS from the first land cell
-                return dfs(grid, r, c)
-    return 0
+    """ Calculates perimeter by checking edges of each land cell """
+    pm = 0
+    row = len(grid)
+    col = len(grid[0])
+
+    for r in range(row):
+        for c in range(col):
+            if grid[r][c] == 1:
+                pm += 4
+                if c < (col - 1) and grid[r][c + 1] == 1:
+                    pm -= 2
+
+                if r < (row - 1) and grid[r + 1][c] == 1:
+                    pm -= 2
+    return pm
