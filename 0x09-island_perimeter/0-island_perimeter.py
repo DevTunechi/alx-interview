@@ -17,4 +17,4 @@ def island_perimeter(grid):
 
                 if r < (row - 1) and grid[r + 1][c] == 1:
                     pm -= 2
-                    return pm
+    return pm
