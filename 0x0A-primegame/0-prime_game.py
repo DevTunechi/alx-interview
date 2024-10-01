@@ -12,7 +12,7 @@ def sieve_of_eratosthenes(n):
     p = 2
     while p * p <= n:
         if prime[p]:
-            for i in range(p * p, n + 1, p):  # Fix here, increment by `p` not `p*2`
+            for i in range(p * p, n + 1, p):  # Fix here, increment by `p`
                 prime[i] = False
         p += 1
     return prime
